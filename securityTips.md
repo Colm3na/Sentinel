@@ -82,21 +82,23 @@ Before starting obtain your validator ID. It will not change after this procedur
 
 `sentinel-hubd tendermint show-node-id`
 
-On **Server-A** completely ensure that you have a backup of the 2 important files outside of the machine, `priv_validator_key.json` and `node_key.json`. Several encrypted USB drives on different locations is recommended. Do not missvalue your mum bedroom :-)
-On **Server-A**, after twice checking point number 1 proceed to delete `priv_validator_key.json` and `node_key.json`
+1. On **Server-A** completely ensure that you have a backup of the 2 important files outside of the machine, `priv_validator_key.json` and `node_key.json`. Several encrypted USB drives on different locations is recommended. Do not missvalue your mum bedroom :-)
 
-Now we will add our validator ID and its new IP to the `config.toml` We will add it in 2 different places. In the section _“persisten_peers”_ and _“private_peers”_ on **Server-A**. This will connect both, sentry and validator next time we reload the daemon.
+2. On **Server-A**, after twice checking point number 1 proceed to delete `priv_validator_key.json` and `node_key.json`
 
-Stop **Server-A** daemon. You will start losing blocks at this moment. Don't panic or hurry. It's ok.
-Start again **Server-A**. Now, without the validator keys, this machine will be a normal full node, not a validator anymore. So it will still be losing blocks. Look for your new sentry ID and add it to your new validator `config.toml` in **Server-B**. Yoy can get it with this command:
+3. Now we will add our validator ID and its new IP to the `config.toml` We will add it in 2 different places. In the section _“persisten_peers”_ and _“private_peers”_ on **Server-A**. This will connect both, sentry and validator next time we reload the daemon.
+
+4. Stop **Server-A** daemon. You will start losing blocks at this moment. Don't panic or hurry. It's ok.
+
+5. Start again **Server-A**. Now, without the validator keys, this machine will be a normal full node, not a validator anymore. So it will still be losing blocks. Look for your new sentry ID and add it to your new validator `config.toml` in **Server-B**. Yoy can get it with this command:
 
 `sentinel-hubd tendermint show-node-id`
 
-On **Server-B**, overwrite `priv_validator_key.json` and `node_key.json` with your priceless backed files.
+6. On **Server-B**, overwrite `priv_validator_key.json` and `node_key.json` with your priceless backed files.
 
-**Stop Server-B daemon**
+7. **Stop Server-B daemon**
 
-**Start Server-B daemon**
+8. **Start Server-B daemon**
 
 After number 8, your validator should connect to your sentry and start signing blocks again. If this does not happen double check that each machine has the other one ID and IP in its `config.toml` 
 

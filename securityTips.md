@@ -4,7 +4,7 @@
 
 [Spin up a new Full-node quickly](/securityTips.md#spin-up-a-new-full-node-quickly)
 
-[Move the “Validator soul” from one node to a new one](/securityTips.md#Move-the-_“Validator-soul”_-from-**Server-A**-to-**Server-B**)
+[Move the “Validator soul” from one node to a new one](https://github.com/Colm3na/Sentinel/blob/master/securityTips.md#move-the-validator-soul-from-server-a-to-server-b)
 
 [Close RPC port](/securityTips.md#Close-RPC-port)
 

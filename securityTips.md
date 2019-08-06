@@ -117,7 +117,8 @@ This really easy, but we have found almost every validator has this port ( 26657
 
 ##### TCP or UNIX socket address for the RPC server to listen on
 
-laddr = "tcp://127.0.0.1:26657"```
+laddr = "tcp://127.0.0.1:26657"
+```
 
 Then **stop and start your daemon** to apply the new configuration.
 

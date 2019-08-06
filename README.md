@@ -4,7 +4,7 @@
 
 En este repositorio puedes encontrar documentación y ayuda para el proyecto de [Sentinel](https://sentinel.co)
 
-[Aquí](https://github.com/Colm3na/Sentinel/blob/master/securityTips.md#spin-up-a-new-full-node-quickly) puedes encontrar algunos _tips_ para la seguridad de tu nodo en inglés.
+[Aquí](https://github.com/Colm3na/Sentinel/blob/master/securityTips.md#security-for-sentinel) puedes encontrar algunos _tips_ para la seguridad de tu nodo en inglés.
 
 [Este](https://github.com/sentinel-official) es su repositorio oficial.
 

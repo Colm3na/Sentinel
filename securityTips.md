@@ -3,8 +3,11 @@
 ## Index
 
 Spin up a new Full-node quickly
+
 Move the “Validator soul” from one node to a new one
+
 Close RPC port
+
 Change SSH port
 
 ### Summary

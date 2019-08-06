@@ -2,13 +2,13 @@
 
 ## Index
 
-Spin up a new Full-node quickly
+[Spin up a new Full-node quickly](/securityTips.md#spin-up-a-new-full-node-quickly)
 
-Move the “Validator soul” from one node to a new one
+[Move the “Validator soul” from one node to a new one](/securityTips.md#Move-the-_“Validator-soul”_-from-**Server-A**-to-**Server-B**)
 
-Close RPC port
+[Close RPC port](/securityTips.md#Close-RPC-port)
 
-Change SSH port
+[Change SSH port](/securityTips.md#Change-SSH-port)
 
 ### Summary
 
@@ -20,7 +20,7 @@ The color Green represents well configured parameter.
 The aim of this document is to help our validator set to gain certain skills needed for running a Sentinel tendermint node during this Sentinel Testnet phase and prepare the setup for the mainnet. We have detected severe to medium lack of proper configuration in the actual set and is our wish that every validator do their best to improve the network security.
 Basically we encourage almost every validator to spin up a new machine. That new machine will be the new validator. The old one will be reused as a public sentry node. It is up to the validator set to form alliances and share resources (such as sentries) between them. We think that practice of dealing with sentry nodes is important. Actually almost all validators seem to be running without any sentry.
 
-#### Spin up a new Full-node quickly
+### Spin up a new Full-node quickly
 
 Boot a new server. You can use any cloud VPC. We call this new server Server-B later in this document.
 
@@ -62,7 +62,7 @@ If you use standar 22 port and no ssh keys use this one:
 rsync -arvz user@[Server-A IP]:$HOME/.sentinel-hubd/data/ $HOME/.sentinel-hubd/data --progress
 ```
 
-Move the _“Validator soul”_ from **Server-A** to **Server-B**
+### Move the _“Validator soul”_ from **Server-A** to **Server-B**
 
 _“Validator soul”_ consists of 2 files:  `priv_validator_key.json`  and  `node_key.json`
 
@@ -104,7 +104,7 @@ After number 8, your validator should connect to your sentry and start signing b
 
 It is a good idea to watch the explorer in your browser to see the entire process. It is ok if you lose a bunch of blocks. More experienced validators can do this without losing a single block. But it does not worth the chance to doublesign.
 
-Close RPC port
+### Close RPC port
 
 This really easy, but we have found almost every validator has this port ( 26657 ) open in the testnet. Requesting information from this port you could know the IP of the nodes you are connected to, including the validator.
 
@@ -119,7 +119,7 @@ This really easy, but we have found almost every validator has this port ( 26657
 
 Then **stop and start your daemon** to apply the new configuration.
 
-#### Change SSH port
+### Change SSH port
 
 By default this port is `tcp/22`. It is considered a good practice to change this value to something over `1024`. Below `1024` we find the reserved standard system ports.
 

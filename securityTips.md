@@ -86,7 +86,7 @@ Before starting obtain your validator ID. It will not change after this procedur
 
 2. On **Server-A**, after twice checking point number 1 proceed to delete `priv_validator_key.json` and `node_key.json`
 
-3. Now we will add our validator ID and its new IP to the `config.toml` We will add it in 2 different places. In the section _“persisten_peers”_ and _“private_peers”_ on **Server-A**. This will connect both, sentry and validator next time we reload the daemon.
+3. Now we will add our validator ID and its new IP to the `config.toml` We will add it in 2 different places. In the section _“persisten_peers”_ and _“private_peers_id”_ on **Server-A**. This will connect both, sentry and validator next time we reload the daemon.
 
 4. Stop **Server-A** daemon. You will start losing blocks at this moment. Don't panic or hurry. It's ok.
 

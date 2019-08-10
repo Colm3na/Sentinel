@@ -86,11 +86,11 @@ Before starting obtain your validator ID. It will not change after this procedur
 
 2. On **Server-A**, after twice checking point number 1 proceed to delete `priv_validator_key.json` and `node_key.json`
 
-3. Now we will add our validator ID and its new IP to the `config.toml` We will add it in 2 different places. ID@IP:PORT in the parameter _“persisten_peers”_ and the ID in the parameter _“private_peers_id”_ on **Server-A**. This will connect both, sentry and validator next time we reload the daemon.
+3. Now we will add our validator ID to the `config.toml` We will add the ID in the parameter _“private_peers_id”_ on **Server-A**. When the new validator connect to its sentry, the new IP will not be gossiped. Due to a bug in the p2p it is prefereable that the validator connects to its sentry, and not the reverse way. If the sentry happen to start the connectiong against the validator this bug may ( or may not ) gossip our validator IP. So we will do it in a secure way by now just in case. That is, we will not add our new validator ID@IP:PORT to _"persisnte_peers"_ in Server-A. 
 
 4. Stop **Server-A** daemon. You will start losing blocks at this moment. Don't panic or hurry. It's ok.
 
-5. Start again **Server-A**. Now, without the validator keys, this machine will be a normal full node, not a validator anymore. So it will still be losing blocks. Look for your new sentry ID and add it to your new validator `config.toml` in **Server-B**. Yoy can get it with this command:
+5. Start again **Server-A**. Now, without the validator keys, this machine will be a normal full node, not a validator anymore. So it will still be losing blocks. Look for your new sentry ID and add it to your new validator `config.toml` in **Server-B** in the _"persisnte_peers"_ parameter. Use ID@IP:PORT in this case. Yo can get the ID of **Server-A** with this command:
 
 `sentinel-hubd tendermint show-node-id`
 

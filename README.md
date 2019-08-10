@@ -1,6 +1,6 @@
 # Sentinel
 
-![SentinelLogo](/images/sentinelLogo.png)
+![SentinelLogo](/images/sentinelLogo_transparent.png)
 
 En este repositorio puedes encontrar documentación y ayuda para el proyecto de [Sentinel](https://sentinel.co)
 

@@ -1,6 +1,6 @@
 # Network Stress Test
 
-![SentinelLogo](/images/sentinelLogo_transparent.png)
+![SentinelLogo](/images/sentinelLogo_transparent_small.png)
 
 We are actually attacking the network to stress it and finding its limits.
 

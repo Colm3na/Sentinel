@@ -12,7 +12,7 @@ We are flodding the network with non sense transactions and paying no fee.
 
 We are using [THIS SCRIPT](/scripts/spamTXs) for the attack. It would be nice to see some other validator using it to inject non sense TXs.
 
-The effect of the Spamm can be seen in the explorer in the Blocks section. The following is a snapshot of what you can see there. We have marked in yellow the blocks with a great number of TXs, what it means that the proposer is not protected against this kind of attacks.
+The effect of the Spam can be seen in the explorer in the Blocks section. The following is a snapshot of what you can see there. We have marked in yellow the blocks with a great number of TXs, what it means that the proposer is not protected against this kind of attacks.
 
 ![spamTX-picture](/images/spamTXs.png)
 

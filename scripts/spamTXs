@@ -1,0 +1,56 @@
+#!/bin/bash
+#
+# Network Spamming Script 
+#
+################################################
+#                                              #
+#  Made with love in Colm3naSVQ by :           #
+#                                              #
+#  @wimel85(wiπΞl) -> @cosmaut:matrix.org      #
+#  @DerFredy       -> @derfredy:matrix.org     #                              
+#                                              #
+################################################
+
+
+# Name of the network
+chain_id=$(curl -s http://localhost:26657/status | jq -r '.result.node_info.network')
+
+# Amonunt of tokens for the TX
+amount="1"
+
+# Password of the wallets
+passwd=1234567890
+
+# IP of a node with open RPC 
+node="XXX.XXX.XXX.XXX:26657"
+
+# List of wallets to use
+wallets=(
+sent1pkwgmz6du5f8rgpsfsfdsa8ghrlftydxfa4txr
+sent1sdfsfwer6ujdsfssdfwregjuh6esxs7zreyhca
+sent1fswrwem7asdfdsf3uu9u3w0eah9hn8t6s6yn8g
+sent1ewwqewqnkpn9gnn4ta4k2e9supd3gwplx3n0c8
+sent1wqer3qwesadfk956flchrekgal6h5z9psc35w3
+sent1wqerfq3dsveqxtn4x0txll2tc52nv75de6tc5u
+)
+
+
+# Nonstop loop
+while true; do
+  
+    for ((index=0; index <= ${#wallets[@]}; index++)); do
+
+        # Will need the sequence and the account_number of each wallet 
+        sequence=$(sentinel-hubcli query account "${wallets[index]}" --chain-id=sentinel-turing-1 --trust-node=true --output=json | jq -r .value.sequence)
+
+        account_number=$(sentinel-hubcli query account ${wallets[index]} --chain-id=sentinel-turing-1 --trust-node=true --output=json | jq -r .value.account_number)
+
+	# This is the final command
+        echo "${passwd}" | sentinel-hubcli tx send "${wallets[index+1]}" "${amount}"tsent --chain-id="${chain_id}" --from="${wallets[index]}" --node="${node}" --sequence="${sequence}" --account-number="${account_number}"  -y
+
+	# Lets print it on screen
+        echo "sentinel-hubcli tx send ${wallets[index+1]} ${amount}tsent --chain-id=${chain_id} --from=${wallets[index]} --node=${node} --sequence=${sequence} --account-number=${account_number} -y" 
+
+    done
+
+done

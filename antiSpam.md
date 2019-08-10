@@ -16,5 +16,17 @@ The effect of the Spamm can be seen in the explorer in the Blocks section. The f
 
 ![spamTX-picture](/images/spamTXs.png)
 
+Once we finish with this experiment and we find the network TX limits we would like every validator to configure a minimun fee parameter this way:
 
+<pre>
+vim ~/.sentinel-hubd/config/gaiad.toml
+</pre>
+
+And add this line there:
+
+<pre>
+minimum-gas-prices = "0.001tsent"
+</pre>
+
+It is possible that this value needs to be increased in the future. We will see how the network evolve...
 

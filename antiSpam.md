@@ -30,3 +30,8 @@ minimum-gas-prices = "0.001tsent"
 
 It is possible that this value needs to be increased in the future. We will see how the network evolve...
 
+When a TX is broadcasted it firstly goes to a memory pool and waits for its turn to be introduced in a block. Thus, the TXs are queueing and you can check how many TX do you have in the queue with the following script:
+
+ [THIS SCRIPT](/scripts/utx) 
+
+You can use it without parameters to check your own validator (localhost) queue or you can check a remote node rpc using its IP as parameter.

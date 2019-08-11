@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Shows TX pool. Queued TXs
+
+################################################
+#                                              #
+#  Made with love from ColmenaLabs by :        #
+#                                              #
+#  @wimel85(wiπΞl) -> @cosmaut:matrix.org      #
+#  @DerFredy       -> @derfredy:matrix.org     #                              
+#                                              #
+################################################
+
+#
+# Usage:  utx [ node IP ]
+#
+# Default [ node IP ] = localhost
+#
+
+node="$1"
+
+if [ -z "$1" ]; then
+  node=localhost
+fi
+
+queued=`curl -s ${node}:26657/num_unconfirmed_txs | jq -r .result.n_txs`
+
+echo "$queued TXs in the queue"

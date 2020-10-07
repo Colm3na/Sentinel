@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# 
+# Example: sentinel-hub-cli tx slashing unjail --from=Tropicar --fees=20tsent --chain-id=sentinel-turing-3a --trust-node=true -y 
+
+#Variables:
+keyname=$(sentinel-hub-cli keys list | awk 'FNR==1{print $3}')
+chain_id=`curl -s http://localhost:26657/status | jq -r '.result.node_info.network'`
+
+echo "Wallet password:"
+read -s password
+echo "${password}" | sentinel-hub-cli tx slashing unjail --from=${keyname} --fees=20tsent --chain-id=${chain_id} --trust-node=true -y
